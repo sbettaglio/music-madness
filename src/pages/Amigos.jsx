@@ -5,7 +5,10 @@ const Amigos = () => {
     <>
       <h1>Los Amigos Invisibles</h1>
       <main>
-        <article>
+        <article className="pic">
+          <img src={LosAmigos} alt="Los Amigos Invisibles Band Members" />
+        </article>
+        <section className="about">
           <p>
             Los Amigos Invisibles (Spanish for "The Invisible Friends") is a
             Venezuelan band that plays a blend of disco, acid jazz and funk
@@ -13,9 +16,6 @@ const Amigos = () => {
             acclaimed albums, the band is lauded internationally for their
             explosive, live shows, spanning nearly 60 countries.
           </p>
-          <img src={LosAmigos} alt="Los Amigos Invisibles Band Members" />
-        </article>
-        <section>
           <h3>Latest Album</h3>
           <article>
             <ul>

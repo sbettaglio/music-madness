@@ -9,4 +9,98 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-color: #011638;
+  color: #CDCDCD;
+}
+
+header {
+  background-color: #214E34;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+}
+
+header nav ul li {
+  list-style: none;
+  padding: 0.5rem 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #DFF8EB;
+}
+
+h1 {
+  text-align: center;
+}
+
+.band-list-hp {
+  list-style: none;
+}
+
+.intro {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: justify;
+}
+
+.band-card {
+  margin-right: 3rem;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.band-card h3 {
+  text-align: center;
+}
+
+main {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+main article {
+  text-align: justify;
+}
+
+main article img {
+  width: 100%;
+}
+
+.band-card img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .band-card {
+    margin-top: 2rem;
+  }
+  .band-card article {
+    display: flex;
+  }
+  .band-card article img {
+    width: 15rem;
+    height: 10rem;
+  }
+  .band-card article p {
+    align-items: center;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  main {
+    display: flex;
+  }
+  .pic {
+    width: 100rem;
+  }
+  .about {
+    padding-left: 1rem;
+    text-align: justify;
+  }
 }

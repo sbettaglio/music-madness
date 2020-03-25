@@ -6,7 +6,10 @@ const Phish = () => {
     <>
       <h1>Phish</h1>
       <main>
-        <article>
+        <article className="pic">
+          <img src={PhishPic} alt="Phish Band Members" />
+        </article>
+        <section className="about">
           <p>
             Phish is an American rock band that formed in Burlington, Vermont in
             1983. The band is known for musical improvisation, extended jams,
@@ -15,9 +18,6 @@ const Phish = () => {
             and keyboardist Page McConnell, all of whom perform vocals, with
             Anastasio being the primary lead vocalist.
           </p>
-          <img src={PhishPic} alt="Phish Band Members" />
-        </article>
-        <section>
           <h3>Latest Album</h3>
           <article>
             <ul>

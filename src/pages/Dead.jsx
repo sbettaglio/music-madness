@@ -6,7 +6,10 @@ const Dead = () => {
     <>
       <h1>The Grateful Dead</h1>
       <main>
-        <article>
+        <article className="pic">
+          <img src={TheDead} alt="Grateful Dead Band Members" />
+        </article>
+        <section className="about">
           <p>
             The Grateful Dead was an American rock band formed in 1965 in Palo
             Alto, California. The band is known for its eclectic style, which
@@ -19,9 +22,6 @@ const Dead = () => {
             made the Grateful Dead "the pioneering Godfathers of the jam band
             world".
           </p>
-          <img src={TheDead} alt="Grateful Dead Band Members" />
-        </article>
-        <section>
           <h3>Latest Album</h3>
           <article>
             <ul>
