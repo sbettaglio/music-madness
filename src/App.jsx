@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
-import Page from './pages/Page'
-import Page2 from './pages/Page2'
+import Phish from './pages/Phish'
+import Dead from './pages/Dead'
+import Amigos from './pages/Amigos'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
 
@@ -9,25 +10,28 @@ const App = () => {
   return (
     <Router>
       <header>
-        <h1>Welcome to my SPA</h1>
         <nav>
           <ul>
             <li>
-              <Link to="/">Go Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/1">Page 1</Link>
+              <Link to="/phish">Phish</Link>
             </li>
             <li>
-              <Link to="/2">Page 2</Link>
+              <Link to="/dead">The Grateful Dead</Link>
+            </li>
+            <li>
+              <Link to="/amigos">Los Amigos Invisibles</Link>
             </li>
           </ul>
         </nav>
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/1" component={Page}></Route>
-        <Route exact path="/2" component={Page2}></Route>
+        <Route exact path="/phish" component={Phish}></Route>
+        <Route exact path="/dead" component={Dead}></Route>
+        <Route exact path="/amigos" component={Amigos}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>
