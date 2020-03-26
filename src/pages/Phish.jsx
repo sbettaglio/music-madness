@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import PhishPic from '../images/phish.jpeg'
 import BandComponent from '../components/BandComponent'
-import axios from 'axios'
 
 const Phish = () => {
   const [phish, setPhish] = useState({})
+  const [phishBio, setPhishBio] = useState({})
   async function fetchData() {
     const resp = await fetch(
       'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=phish&api_key=15a8aa9b0d09e6572aa2b2f6ab29fdb0&format=json'
@@ -15,13 +15,23 @@ const Phish = () => {
   useEffect(() => {
     fetchData()
   }, [])
-  console.log(phish.bio)
+  console.log(phish)
+  async function fetchMoreData() {
+    const resp = await fetch(
+      'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=phish&api_key=15a8aa9b0d09e6572aa2b2f6ab29fdb0&format=json'
+    )
+    const data = await resp.json()
+    setPhishBio(data.artist.bio)
+  }
+  useEffect(() => {
+    fetchMoreData()
+  }, [])
   return (
     <>
       <BandComponent
         name={phish.name}
-        // pic="https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
-        // description={phish.bio.links.summary}
+        pic={phish.image}
+        description={phishBio.summary}
         albumTitle="Big Boat"
         year="2016"
         songs="13"
