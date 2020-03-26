@@ -1,17 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import LosAmigos from '../images/Amigos Invisibles.jpeg'
 import BandComponent from '../components/BandComponent'
+
 const Amigos = () => {
+  const [amigos, setAmigos] = useState({})
+  const [amigosBio, setAmigosBio] = useState({})
+  async function fetchData() {
+    const resp = await fetch(
+      'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=amigosinvisibles&api_key=15a8aa9b0d09e6572aa2b2f6ab29fdb0&format=json'
+    )
+    const data = await resp.json()
+    setAmigos(data.artist)
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+  console.log(amigos)
+  async function fetchMoreData() {
+    const resp = await fetch(
+      'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=amigosinvisibles&api_key=15a8aa9b0d09e6572aa2b2f6ab29fdb0&format=json'
+    )
+    const data = await resp.json()
+    setAmigosBio(data.artist.bio)
+  }
+  useEffect(() => {
+    fetchMoreData()
+  }, [])
   return (
     <>
       <BandComponent
-        name="Lost Amigos Invisibles"
+        name={amigos.name}
         pic={LosAmigos}
-        description="Los Amigos Invisibles (Spanish for 'The Invisible Friends') is a
-            Venezuelan band that plays a blend of disco, acid jazz and funk
-            mixed with Latin rhythms. In addition to releasing eleven critically
-            acclaimed albums, the band is lauded internationally for their
-            explosive, live shows, spanning nearly 60 countries."
+        description={amigosBio.summary}
         albumTitle="El Paradise"
         year="2107"
         songs="13"
